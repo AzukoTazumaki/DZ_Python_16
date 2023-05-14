@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block ex_3_answer %}
+<!-- RESULT -->
+<div class="container">
+    <div class="row d-flex align-items-center vh-100">
+        <div class="offset-4 col-4">
+            <p class="mt-3 ex_3_result">Результат:<br><br>{{ board_first_line }}<br>{{ board_second_line }}<br>{{ board_third_line }}<br>{{ board_fourth_line }}<br>{{ board_fifth_line }}<br>{{ board_sixth_line }}</p>
+            <a href="/">
+                <button type="button">На главную</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

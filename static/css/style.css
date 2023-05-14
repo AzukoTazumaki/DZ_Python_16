@@ -159,6 +159,12 @@ canvas {
     box-shadow: var(--box-shadow-dark);
 }
 
+.ex_3_result {
+    white-space: pre-wrap;
+    color: var(--text-color-light);
+    text-shadow: var(--text-shadow-light);
+}
+
 /*—————————————————————————————ERROR—404—AND—BAD—REQUEST—————————————————————————*/
 
 .errors_body {
