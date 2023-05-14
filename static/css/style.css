@@ -35,7 +35,7 @@ body {
 
 video {
     position: fixed;
-    width: 100vw;
+    width: 110vw;
     z-index: -1;
 }
 
