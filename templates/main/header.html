@@ -1,0 +1,30 @@
+{% block header %}
+<!-- HEADER -->
+<header id="header" data-bs-spy="scroll" data-bs-target="#header">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand fixed-top">
+
+        <!-- CONTAINER -->
+        <div class="container header_container d-flex justify-content-between">
+
+            <!-- LOGO -->
+            <a href="#header" class="navbar-brand">
+                <img src="{{url_for('static', filename='img/logo.svg')}}" width="190" alt="Azuko">
+            </a>
+
+            <!-- NAV-LINKS -->
+            <a href="#gcd" class="header-link">НОД</a>
+            <a href="#bulls_and_cows" class="header-link">Быки и Коровы</a>
+            <a href="#knights_move" class="header-link">Ход Конем</a>
+            <a href="#fifteen_puzzle" class="header-link">Пятнашки</a>
+
+            <!-- TITLE -->
+            <p class="m-0 title_header">Домашнее Задание #16. Функции. Часть III.</p>
+
+        </div>
+
+    </nav>
+    
+</header>
+{% endblock %}

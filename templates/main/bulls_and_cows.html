@@ -1,0 +1,45 @@
+{% block bulls_and_cows %}
+<!-- CONTAINER -->
+<div class="container-fluid">
+
+    <!-- ROWS -->
+    <div id="bulls_and_cows" class="row d-flex align-items-center vh-100" data-bs-spy="scroll"
+        data-bs-target="#bulls_and_cows">
+
+        <!-- NAME OF APP -->
+        <div class="offset-2 col-4">
+            <h2 class="text-center">БЫКИ И КОРОВЫ</h2>
+        </div>
+
+        <!-- EXERCISE -->
+        <div class="col-4 exercise">
+
+            <!-- TITLE & DESCRIPTION -->
+            <p class="mb-3">
+                Задание 2. <br>
+                Написать игру «Быки и коровы». Программа «загадывает» четырёхзначное число и играющий должен
+                угадать его. После ввода пользователем числа программа
+                сообщает, сколько цифр числа угадано (быки) и сколько
+                цифр угадано и стоит на нужном месте (коровы). После
+                отгадывания числа на экран необходимо вывести количество сделанных пользователем попыток. В программе
+                необходимо использовать рекурсию. <br><br>
+                Введите четырехзначное число:
+            </p>
+
+            <!-- FORM -->
+            <form action="/ex_1" method="post">
+                <div class="d-flex justify-content-between align-items-center">
+                    <input class="form-control" name="bulls_and_cows" type="text" placeholder="Введите число">
+                    <button class="submit" type="submit">Проверить</button>
+                </div>
+            </form>
+
+            <!-- RESULT -->
+            <p class="mt-3">Результат: <br> {{ ex_1_result }}</p>
+
+        </div>
+
+    </div>
+    
+</div>
+{% endblock %}

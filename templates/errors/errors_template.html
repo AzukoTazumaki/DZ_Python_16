@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python — Функции</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body class="errors_body">
+
+    <!-- BACKGROUND -->
+    <video autoplay loop muted 
+            src="{{url_for('static', filename='video/background.mp4')}}"
+            style="width: 110vw; position: fixed; z-index: -1; filter: grayscale(.7);"></video>
+
+    <!-- ERROR'S HEADER -->
+    {% block header_404 %}
+    {% include 'errors/header_404.html' %}
+    {% endblock %}
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+        <!-- ROWS -->
+        <div class="row d-flex justify-content-center align-items-center vh-100">
+
+            <!-- ERROR 404 -->
+            {% block page_not_found %}
+            {% endblock %}
+            
+            <!-- BAD REQUEST -->
+            {% block bad_request %}
+            {% endblock %}
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/fb866d52e1.js" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='js/errors.js')}}"></script>
+    
+</body>
+
+</html>

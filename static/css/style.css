@@ -1,0 +1,241 @@
+/*————————————————————————————————DEFAULT—SETTINGS————————————————————————————————*/
+
+@font-face {
+    font-family: 'AZUKO';
+    src:
+        url(../fonts/Unbounded-Light.ttf);
+}
+
+:root {
+    --font-family: 'AZUKO';
+    --text-color-light: rgb(221, 167, 129);
+    --text-color-dark: rgb(70, 70, 70);
+    --text-shadow-light: 1px 1px 6px var(--text-color-light);
+    --text-shadow-dark: 1px 1px 6px var(--text-color-dark);
+    --box-shadow-light:
+        3px 3px 40px var(--text-color-light),
+        -3px -3px 40px var(--text-color-light);
+    --box-shadow-dark:
+        3px 3px 10px var(--text-color-dark),
+        -3px -3px 10px var(--text-color-dark);
+    --block-background: rgb(38, 76, 113);
+    --block-background-transparent: rgba(38, 76, 113, .7);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 17px;
+    color: var(--text-color-light);
+    background-color: var(--text-color-dark);
+}
+
+video {
+    position: fixed;
+    width: 100vw;
+    z-index: -1;
+}
+
+/*—————————————————————————————————————HEADER—————————————————————————————————————*/
+
+.title_header {
+    text-shadow: var(--text-shadow-light);
+}
+
+.header-link {
+    text-decoration: none;
+    color: var(--text-color-light);
+    text-shadow: var(--text-shadow-light);
+    transition: .5s;
+}
+
+.header-link:hover {
+    transform: scale(1.2);
+    color: var(--text-color-light);
+    text-shadow: none;
+}
+
+.header_container {
+    background: var(--block-background-transparent);
+    padding: 5px 45px 5px 10px;
+    border-radius: 10px;
+}
+
+/*—————————————————————————————————————WELCOME—————————————————————————————————————*/
+
+.welcome {
+    color: var(--text-color-light);
+    text-shadow: var(--text-shadow-light);
+}
+
+.text_welcome {
+    overflow: hidden;
+}
+
+.span_welcome {
+    position: relative;
+    transition: 3s;
+    display: inline-block;
+    animation: text_welcome 2s;
+}
+
+@keyframes text_welcome {
+    from {
+        transform: translateY(150%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.post_scriptum {
+    overflow: hidden;
+}
+
+.span_post_scriptum {
+    position: relative;
+    transition: 3s;
+    display: inline-block;
+    animation: span_post_scriptum 2s;
+}
+
+@keyframes span_post_scriptum {
+    from {
+        transform: translateY(-150%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.info {
+    white-space: pre-wrap;
+}
+
+/*——————————————————————————————————————MAIN—————————————————————————————————————*/
+
+.exercise {
+    background-color: var(--block-background);
+    padding: 30px;
+    border-radius: 20px;
+    transition: .5s;
+    animation: exercise .5s;
+}
+
+button {
+    background-color: var(--text-color-light) !important;
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    transition: .5s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+input {
+    background-color: var(--text-color-light) !important;
+    border: none !important;
+}
+
+
+.submit {
+    margin-left: 20px;
+}
+
+/*————————————————————————————————————EXERCISES———————————————————————————————————*/
+
+.container-fluid {
+    backdrop-filter: grayscale(.5);
+}
+
+canvas {
+    background-color: var(--text-color-dark);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-dark);
+}
+
+/*—————————————————————————————ERROR—404—AND—BAD—REQUEST—————————————————————————*/
+
+.errors_body {
+    color: var(--text-color-light);
+    text-shadow: var(--text-shadow-light);
+    overflow: hidden;
+    transition: all .2s ease;
+}
+
+.page_not_found,
+.logo_404 {
+    transition: all .2s ease;
+}
+
+/*—————————————————————————————————————PRELOADER—————————————————————————————————*/
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--block-background);
+    z-index: 1001;
+}
+
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: var(--text-color-light);
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 1s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader-bounce {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}
